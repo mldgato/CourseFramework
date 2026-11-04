@@ -1,14 +1,14 @@
 # Course Framework
 
-Framework para crear cursos de certificación y publicarlos en Smart C3 (Xperienceed).
+Framework para crear cursos de certificación.
 Se parte del PDF oficial del examen; Claude (Claude Code) genera, **tema por tema**, la teoría,
-las preguntas, la actividad interactiva y el ebook, y los sube a la plataforma.
+las preguntas, la actividad interactiva y el ebook.
 
 ```
 PDF del examen ─ /init-course ─► course.config.js (unidades → lecciones → temas) + carpetas
                                          │  por cada tema X.Y.Z
                                          ▼
- /word-content → /questions → /activities → /html-content → /upload → (/videos)
+ /word-content → /questions → /activities → /html-content → (/videos)
 ```
 
 ## Datos de este repositorio
@@ -18,7 +18,6 @@ PDF del examen ─ /init-course ─► course.config.js (unidades → lecciones 
 | Curso | Data Analytics (`id: data-analytics`) |
 | Certificación | ITS: Data Analytics |
 | PDF del examen | `ITS OD 202 Data Analytics 0525.pdf` (en la raíz) |
-| ID en la plataforma | `DA-FULL-01` |
 | Voces de video | Jorge (por defecto) y Liz, en `course.config.js` |
 
 ## Requisitos
@@ -28,7 +27,6 @@ PDF del examen ─ /init-course ─► course.config.js (unidades → lecciones 
 | [Claude Code](https://claude.com/claude-code) | Ejecutar los comandos | Sí |
 | Node.js 18+ | Generar Word y probar actividades | Sí |
 | Python 3.9+ | Leer el PDF (`pymupdf`) y convertir Word a HTML | Sí |
-| Chrome + extensión Claude in Chrome | `/upload` a Smart C3 | Solo para subir |
 | `_video_kit/` + clave ElevenLabs en `_video_kit/.env` | `/videos` | Solo para videos (el kit **no** viene en este repo) |
 
 Funciona en Windows, Mac y Linux.
@@ -69,10 +67,7 @@ Los números son el ID del tema en `course.config.js` (unidad.lección.tema). Re
 | `/questions 1.1.1` | Preguntas de evaluación en Word | `…/Preguntas/` |
 | `/activities 1.1.1` | Actividad HTML interactiva (ábrela en el navegador) | `…/Actividades/` |
 | `/html-content 1.1.1` | Fragmento HTML del ebook | `…/Contenido HTML/` |
-| `/upload 1.1.1` | Sube a Smart C3 (acepta `actividad`, `html` o `video`) | Smart C3 |
 | `/videos 1.1.1` | Video completo (solo si lo pides; requiere `_video_kit/`) | `Videos/` |
-
-Para `/upload`: inicia tú sesión en Smart C3 antes. Claude nunca escribe contraseñas.
 
 ## Solución de problemas
 
@@ -83,7 +78,6 @@ Para `/upload`: inicia tú sesión en Smart C3 antes. Claude nunca escribe contr
 | `Cannot find module 'docx'` | Falta instalar `_tools`: ejecuta `node setup.js` (o `cd _tools && npm install`). |
 | `python3` no existe (Windows) | Usa `python`. Los comandos deciden cuál existe. |
 | `/videos` falla | Falta `_video_kit/` y su `.env`. Es opcional; pídelo al responsable del framework. |
-| El pegado en Smart C3 no toma | Pasa a veces: verifica el contenido en el editor y repite. Detalles en `.claude/commands/upload.md`. |
 
 ## Estructura
 
