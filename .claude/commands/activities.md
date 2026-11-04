@@ -34,6 +34,7 @@ Genera un archivo HTML autocontenido con la actividad interactiva del tema. Incl
 - Badge `practica` (índigo) o `analogia` (ámbar) según el tipo
 - Los emojis sí se permiten en las actividades
 - ID de la actividad: `{config.id}-X.Y.Z` (ej. `<id>-1.1.1`)
+- **Objetivo de certificación (discreto pero visible):** en el paso Repaso, una etiqueta pequeña (chip tenue, texto ~11–12 px, junto al badge) que diga `Objetivo {topic.id}` y, en `title`/tooltip, `{certification} · Objetivo {lesson.id}: {lesson.objective}`. No debe competir con el contenido ni ocupar más de una línea. Datos de `course.config.js`.
 
 ### 3. Widgets disponibles
 ```js

@@ -23,6 +23,7 @@ Genera 2–5 preguntas de evaluación para el tema indicado y las agrega al Word
 
 ### 2. Diseñar las preguntas
 **Reglas:**
+- **Objetivo de certificación (obligatorio, explícito):** bajo el encabezado de cada tema en el Word, una línea `Objetivo de certificación {certification} · {topic.id} {topic.title} (Objetivo {lesson.id}: {lesson.objective})`, tomada de `course.config.js`. Todas las preguntas del tema deben medir ese objetivo.
 - 2–5 preguntas según la complejidad del tema
 - Mezcla al menos 2 tipos diferentes
 - Los distractores son errores reales, no inventados

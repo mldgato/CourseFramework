@@ -13,7 +13,7 @@ argument-hint: X.Y.Z
 ```
 
 ## Lo que hace
-Genera el fragmento HTML que se sube al editor de la plataforma (ebook). Es un fragmento — sin `<html>/<head>/<body>` — pensado para pegar en el editor Monaco de Smart C3.
+Genera el fragmento HTML del ebook. Es un fragmento — sin `<html>/<head>/<body>`.
 
 ## Pasos internos (invisibles para el autor)
 
@@ -48,6 +48,8 @@ Esto genera un archivo por tema. Luego toma solo el del tema solicitado.
 - Cada `<td>` lleva `background:#ffffff`
 
 **Jerarquía:** título de tema → `<h2>`, subtítulo → `<h3>`, sub-subtítulo → `<h4>`
+
+**Objetivo de certificación (obligatorio, explícito):** justo después del `<h2>` del tema debe haber un recuadro compacto (fondo `#eaf4fb`, borde izquierdo `steel`, texto pequeño) con: `Objetivo de certificación {certification} · {topic.id} {topic.title}` y `Objetivo {lesson.id}: {lesson.objective}`, tomados de `course.config.js`. Si el Word ya trae este recuadro, la conversión lo conserva: verifica que esté presente en el fragmento final y, si falta, agrégalo. Sin quizzes (sigue valiendo la regla de contenido).
 
 **Regla de contenido:** solo repaso y exploración. Sin quizzes ni preguntas de evaluación (eso es exclusivo de las Actividades).
 

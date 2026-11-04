@@ -72,6 +72,8 @@ Crea `Videos/Unidad N/_fuente_X.Y.Z/_partes/` con tres archivos de texto:
 - `scenes.txt`: el HTML de las `<section class="scene" id="s1">…</section>` (ids `s1`…`sN`, 4–6 escenas: gancho, concepto, ejemplo con el escenario, enumeración/comparación, resumen)
 - `anim.txt`: animaciones GSAP, con todo tiempo de contenido escrito como `at(t)` (t = segundo de `cues.txt`). Usa los helpers `wipe(nueva, at(t), anterior)` y `swap(salida, entrada, at(t))` de la plantilla
 
+**Objetivo de certificación (solo visual, breve):** incluye en la escena de gancho (`s1`) o en la de resumen una etiqueta pequeña en una esquina, p. ej. `OBJETIVO {topic.id}` (con el nombre corto de la certificación si cabe), visible unos ~3–4 s (cumple "texto ≥ 2 s"), con entrada y salida suaves y sin competir con el contenido. **No se narra** ni se agrega al guion (sigue vigente "sin mencionar el examen ni la certificación" en la narración). Datos de `course.config.js`.
+
 Reglas de diseño y de HyperFrames: lee `_video_kit/template/DESIGN.md` (fondo navy, acento único, tipografía Fraunces/JetBrains Mono, sin emojis, texto ≥ 2 s en pantalla, sin `Math.random`, sin salidas antes de un barrido, timelines síncronos).
 
 ```bash

@@ -1,6 +1,7 @@
 ---
 description: Sube el contenido de UN tema a Smart C3 (Xperienceed) via Chrome. Uso: /upload X.Y.Z [tipo]
 argument-hint: X.Y.Z [actividad|html|video]
+disable-model-invocation: true
 ---
 
 # Skill: Subir a Smart C3 (un tema a la vez)

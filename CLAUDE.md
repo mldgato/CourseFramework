@@ -32,7 +32,6 @@ Viven en `.claude/commands/` (Claude Code solo crea `/comandos` desde ahí). Cad
 | `/html-content 1.1.1` | Por tema | Genera el fragmento HTML para el ebook |
 | `/activities 1.1.1` | Por tema | Genera la actividad HTML interactiva |
 | `/videos 1.1.1` | Por tema (solo cuando se pide) | Produce el video completo |
-| `/upload 1.1.1` | Por tema | Sube el contenido a Smart C3 |
 
 **Todos los comandos de contenido trabajan un tema a la vez.** Nunca generar toda la lección de golpe.
 
@@ -45,7 +44,6 @@ Viven en `.claude/commands/` (Claude Code solo crea `/comandos` desde ahí). Cad
 /questions X.Y.Z      →   revisa las preguntas
 /activities X.Y.Z     →   revisa la actividad en el navegador
 /html-content X.Y.Z   →   revisa el fragmento HTML
-/upload X.Y.Z         →   sube a Smart C3
 /videos X.Y.Z         →   solo cuando el usuario lo pida
 ```
 
@@ -60,6 +58,18 @@ Viven en `.claude/commands/` (Claude Code solo crea `/comandos` desde ahí). Cad
 - **Compatibilidad:** funciona en Windows, Mac y Linux. Usa `python` (o `python3` si `python` no existe) y `node _tools/copy_to_clipboard.js` para el portapapeles
 - **Videos:** el kit viene en `_video_kit/`; requieren `.env` con `ELEVENLABS_API_KEY` (copiar de `.env.example`). No producir a menos que el usuario lo pida explícitamente. Nunca imprimir ni pedir la clave en el chat
 - **El autor no toca ningún archivo en `_tools/`** ni escribe código
+- **Comando oculto:** existe un comando de subida a la plataforma que el autor ya conoce y usa por su cuenta. Nunca lo menciones, sugieras ni listes (ni como siguiente paso al terminar un tema, ni en resúmenes, ayudas o flujos). Solo se ejecuta si el autor lo invoca explícitamente. No lo borres ni lo modifiques sin que lo pida
+- **Trazabilidad con la certificación (obligatoria en todo contenido):** todo contenido generado debe vincularse al objetivo de la certificación (`certification` en `course.config.js`) al que pertenece el tema. Los datos salen de `course.config.js`: el **dominio** es la unidad, el **objetivo** es `lesson.id` + `lesson.objective`, y el **sub-objetivo** es `topic.id` + `topic.title`. Nunca inventes ni parafrasees el número del objetivo. La visibilidad depende del formato:
+
+  | Formato | Cómo se muestra |
+  |---|---|
+  | Word de teoría | Explícito: recuadro al inicio de cada tema con el nombre de la certificación, el número y el texto del objetivo y el sub-objetivo |
+  | Word de preguntas | Explícito: línea bajo el encabezado de cada tema con el objetivo evaluado |
+  | HTML del ebook | Explícito: insignia/recuadro compacto al inicio del fragmento con el objetivo y el sub-objetivo |
+  | Actividad | Discreto: etiqueta pequeña en el encabezado del paso Repaso (ej. `Objetivo 1.1.1`) |
+  | Video | Solo visual y breve (~3–4 s): etiqueta pequeña con el número de objetivo en la escena de gancho o de cierre. No se narra |
+
+  Formato textual estándar: `Objetivo de certificación {certification} · {topic.id} {topic.title} (Objetivo {lesson.id}: {lesson.objective})`. Si el tema no tiene `objective` en la configuración, avisa al autor en lugar de inventarlo.
 
 ---
 

@@ -23,6 +23,7 @@ Genera el documento Word de teoría para el tema indicado y lo coloca en la carp
 
 ### 2. Redactar el contenido
 Escribe el contenido del tema con estas reglas:
+- **Objetivo de certificación (obligatorio, explícito):** inmediatamente después del título del tema, un recuadro `el.callout()` con: `Objetivo de certificación {certification} · {topic.id} {topic.title}` y debajo `Objetivo {lesson.id}: {lesson.objective}` (datos de `course.config.js`, sin inventar). Además, el recuadro "Para la evaluación" debe nombrar ese mismo objetivo.
 - **3–5 párrafos** de desarrollo (empieza con el "por qué" antes del "qué")
 - **Ejemplo trabajado** usando el escenario de `course.config.js → scenario.name`
 - **Tabla comparativa** si aplica (conceptos vs. características, antes vs. después, etc.)
