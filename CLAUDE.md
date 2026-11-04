@@ -5,7 +5,11 @@
 
 ---
 
-## Lo primero: leer course.config.js
+## Lo primero: preparar el entorno
+
+Si es la primera vez en este equipo, el autor debe ejecutar `node setup.js` (instala `pymupdf` y las librerías de `_tools/`). Si falta algo, dilo y propón correr ese comando. El orden es: `node setup.js` → abrir Claude Code en esta carpeta → `/init-course`.
+
+## Lo segundo: leer course.config.js
 
 Antes de cualquier acción lee `course.config.js`. Ahí están:
 - El nombre del curso y la certificación
@@ -16,9 +20,11 @@ Antes de cualquier acción lee `course.config.js`. Ahí están:
 
 ---
 
-## Los skills disponibles
+## Los comandos disponibles
 
-| Skill | Uso | Qué hace |
+Viven en `.claude/commands/` (Claude Code solo crea `/comandos` desde ahí). Cada uno recibe el ID del tema como argumento.
+
+| Comando | Uso | Qué hace |
 |-------|-----|----------|
 | `/init-course` | Al iniciar un curso nuevo | Lee el PDF del examen → llena course.config.js → crea carpetas |
 | `/word-content 1.1.1` | Por tema | Genera la teoría en Word para ese tema |
@@ -28,7 +34,7 @@ Antes de cualquier acción lee `course.config.js`. Ahí están:
 | `/videos 1.1.1` | Por tema (solo cuando se pide) | Produce el video completo |
 | `/upload 1.1.1` | Por tema | Sube el contenido a Smart C3 |
 
-**Todos los skills de contenido trabajan un tema a la vez.** Nunca generar toda la lección de golpe.
+**Todos los comandos de contenido trabajan un tema a la vez.** Nunca generar toda la lección de golpe.
 
 ---
 
@@ -51,7 +57,8 @@ Antes de cualquier acción lee `course.config.js`. Ahí están:
 - **Word:** sin emojis, moneda `$`
 - **Actividades:** emojis permitidos
 - **IDs de actividades:** `{config.id}-X.Y.Z`
-- **Videos:** no producir a menos que el usuario lo pida explícitamente
+- **Compatibilidad:** funciona en Windows, Mac y Linux. Usa `python` (o `python3` si `python` no existe) y `node _tools/copy_to_clipboard.js` para el portapapeles
+- **Videos:** requieren `_video_kit/` (opcional, no viene en el repo); no producir a menos que el usuario lo pida explícitamente
 - **El autor no toca ningún archivo en `_tools/`** ni escribe código
 
 ---
@@ -61,7 +68,8 @@ Antes de cualquier acción lee `course.config.js`. Ahí están:
 ```
 course.config.js       ← configuración (el autor la edita al inicio)
 CLAUDE.md              ← este archivo
-.claude/agents/        ← skills (el autor no los edita)
+.claude/commands/      ← comandos /… (el autor no los edita)
+setup.js               ← instalador de dependencias
 _fuente-assets/        ← runtime de actividades (no tocar)
 _tools/                ← herramientas internas (no tocar)
 _video_kit/            ← kit de videos (no tocar)

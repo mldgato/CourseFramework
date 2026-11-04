@@ -1,9 +1,11 @@
 ---
-name: word-content
 description: Genera el contenido de teoría en Word para UN tema específico. Uso: /word-content X.Y.Z
+argument-hint: X.Y.Z
 ---
 
 # Skill: Generar Teoría en Word (un tema a la vez)
+
+**Argumento recibido:** `$ARGUMENTS` (el tema, p. ej. `1.1.1`). Si viene vacío, pídelo al autor.
 
 ## Uso
 ```
@@ -34,7 +36,7 @@ Crea un script temporal en `_tools/`, lo ejecuta con `node` y lo elimina:
 ```bash
 cd _tools && npm install --silent  # solo si no está instalado
 node _tmp_leccionXYZ.js "ruta/salida.docx"
-rm _tmp_leccionXYZ.js
+rm _tmp_leccionXYZ.js   # (en PowerShell: Remove-Item)
 ```
 
 El script usa `lib-leccion.js` y los elementos `el.p()`, `el.h1()`, `el.h2()`, `el.table()`, `el.callout()`, etc.

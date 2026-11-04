@@ -1,9 +1,11 @@
 ---
-name: activities
 description: Genera la actividad HTML interactiva para UN tema específico. Uso: /activities X.Y.Z
+argument-hint: X.Y.Z
 ---
 
 # Skill: Generar Actividad Interactiva (un tema a la vez)
+
+**Argumento recibido:** `$ARGUMENTS` (el tema, p. ej. `1.1.1`). Si viene vacío, pídelo al autor.
 
 ## Uso
 ```

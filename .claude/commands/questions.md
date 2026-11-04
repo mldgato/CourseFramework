@@ -1,9 +1,11 @@
 ---
-name: questions
 description: Genera las preguntas de evaluación en Word para UN tema específico. Uso: /questions X.Y.Z
+argument-hint: X.Y.Z
 ---
 
 # Skill: Generar Preguntas en Word (un tema a la vez)
+
+**Argumento recibido:** `$ARGUMENTS` (el tema, p. ej. `1.1.1`). Si viene vacío, pídelo al autor.
 
 ## Uso
 ```
@@ -48,7 +50,7 @@ node _tools/_tmp_preguntasXYZ.js "ruta/salida.docx"
 ### 4. Inyectar en la actividad (si existe)
 Si ya existe la actividad HTML del tema (`Actividades/X.Y.Z Título.html`), ejecuta:
 ```bash
-python3 _tools/inject_preguntas.py "Unidad N - ..."
+python _tools/inject_preguntas.py "Unidad N - ..."
 ```
 Esto agrega las preguntas como último paso de la actividad.
 

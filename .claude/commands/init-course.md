@@ -1,5 +1,4 @@
 ---
-name: init-course
 description: Lee el PDF del examen, extrae los objetivos y configura automáticamente course.config.js con la estructura de unidades, lecciones y temas. También crea las carpetas del curso y sugiere un escenario pedagógico.
 ---
 
@@ -22,7 +21,7 @@ Busca en la raíz del proyecto un archivo `.pdf`. Si hay más de uno, pregunta a
 
 ### 2. Leer el PDF
 ```python
-import fitz  # pip3 install pymupdf
+import fitz  # pip install pymupdf
 doc = fitz.open("ruta/al/examen.pdf")
 texto = "\n".join(page.get_text() for page in doc)
 ```

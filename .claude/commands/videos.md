@@ -1,9 +1,11 @@
 ---
-name: videos
 description: Produce el video para UN tema específico (guion, narración, animación, render). Uso: /videos X.Y.Z
+argument-hint: X.Y.Z
 ---
 
 # Skill: Producir Video (un tema a la vez)
+
+**Argumento recibido:** `$ARGUMENTS` (el tema, p. ej. `1.1.1`). Si viene vacío, pídelo al autor.
 
 ## Uso
 ```
@@ -11,6 +13,8 @@ description: Produce el video para UN tema específico (guion, narración, anima
 ```
 
 ## Prerequisito
+La carpeta `_video_kit/` debe existir en la raíz del proyecto. Si no existe, avisa al autor que el kit de videos no está instalado (ver README) y detente.
+
 El archivo `_video_kit/.env` debe existir con:
 ```
 ELEVENLABS_API_KEY=sk-...
@@ -24,7 +28,7 @@ Produce el video completo del tema: guion → narración con ElevenLabs → anim
 
 ### 1. Scaffolding
 ```bash
-python3 _video_kit/kit.py scaffold X.Y.Z
+python _video_kit/kit.py scaffold X.Y.Z
 ```
 Crea `Videos/Unidad N/_fuente_X.Y.Z/` con la estructura de trabajo.
 
@@ -42,18 +46,18 @@ Lee el Word de teoría del tema y el PDF del examen. Escribe `SCRIPT.md` con:
 ### 3. Narrar
 Lee `course.config.js → voices` para elegir la voz. Si no está especificada para esta lección, usa `voices.default`.
 ```bash
-python3 _video_kit/kit.py narrate X.Y.Z --voice VOICE_ID --voice-name NombreVoz
+python _video_kit/kit.py narrate X.Y.Z --voice VOICE_ID --voice-name NombreVoz
 ```
 
 **⏸ Punto de revisión:** muestra `cues.txt` al autor para verificar que la voz no leyó etiquetas de tono ni deformó términos. Corregir con `narrate --force` si es necesario.
 
 ### 4. Construir y renderizar
 ```bash
-python3 _video_kit/tools/build_anim.py X.Y.Z
-python3 _video_kit/tools/assemble_scenes.py X.Y.Z
-python3 _video_kit/tools/snap_ends.py X.Y.Z
-python3 _video_kit/kit.py render X.Y.Z
-python3 _video_kit/tools/check_video.py X.Y.Z
+python _video_kit/tools/build_anim.py X.Y.Z
+python _video_kit/tools/assemble_scenes.py X.Y.Z
+python _video_kit/tools/snap_ends.py X.Y.Z
+python _video_kit/kit.py render X.Y.Z
+python _video_kit/tools/check_video.py X.Y.Z
 ```
 
 ### 5. Entregar

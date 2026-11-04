@@ -1,9 +1,11 @@
 ---
-name: html-content
 description: Genera el fragmento HTML del ebook para UN tema específico. Uso: /html-content X.Y.Z
+argument-hint: X.Y.Z
 ---
 
 # Skill: Generar Contenido HTML del Ebook (un tema a la vez)
+
+**Argumento recibido:** `$ARGUMENTS` (el tema, p. ej. `1.1.1`). Si viene vacío, pídelo al autor.
 
 ## Uso
 ```
@@ -22,7 +24,7 @@ Genera el fragmento HTML que se sube al editor de la plataforma (ebook). Es un f
 
 ### 2. Convertir (si hay Word)
 ```bash
-python3 _tools/docx2html.py --split \
+python _tools/docx2html.py --split \
   "Unidad N - .../Teoría/Lección X.Y - Título.docx" \
   "Unidad N - .../Contenido HTML" "X.Y"
 ```
@@ -52,7 +54,7 @@ Esto genera un archivo por tema. Luego toma solo el del tema solicitado.
 ### 4. Retrofit interactivo (opcional)
 Si el tema tiene una tabla de clasificación o glosario con dos columnas, puedes aplicar tarjetas flip:
 ```bash
-python3 _tools/add_flashcards.py "Contenido HTML/X.Y.Z Título.html"
+python _tools/add_flashcards.py "Contenido HTML/X.Y.Z Título.html"
 ```
 Pregunta al autor antes de aplicarlo. **Nunca forzar interactividad donde no hay tabla adecuada.**
 

@@ -1,9 +1,11 @@
 ---
-name: upload
 description: Sube el contenido de UN tema a Smart C3 (Xperienceed) via Chrome. Uso: /upload X.Y.Z [tipo]
+argument-hint: X.Y.Z [actividad|html|video]
 ---
 
 # Skill: Subir a Smart C3 (un tema a la vez)
+
+**Argumento recibido:** `$ARGUMENTS` (el tema, p. ej. `1.1.1`). Si viene vacío, pídelo al autor.
 
 ## Uso
 ```
@@ -27,16 +29,16 @@ Antes de intentar subir, confirma que el archivo del tema existe en su carpeta. 
 2. Abrir editor → pestaña **HTML EDITOR** → marcar **"Allow html styles"** → Monaco
 3. Pegar el contenido del archivo:
    ```bash
-   pbcopy < "Unidad N - .../Contenido HTML/X.Y.Z Título.html"
+   node _tools/copy_to_clipboard.js "Unidad N - .../Contenido HTML/X.Y.Z Título.html"
    ```
-   En Monaco: seleccionar todo → `Cmd+V` → esperar 2 s → SAVE
+   En Monaco: seleccionar todo → `Ctrl+V` (`Cmd+V` en Mac) → esperar 2 s → SAVE
 4. Verificar con `getValue()` que el contenido guardó correctamente
 
 ### Actividad HTML
 1. Navegar a `content-manager/tasks` → Unidad → Courses → marcar el courseId de `course.config.js`
 2. Seleccionar el tema → "+" → **HTML**
 3. Title = nombre del archivo sin `.html`
-4. Pegar el `.html` completo (`pbcopy` + `Cmd+V`) → SAVE
+4. Pegar el `.html` completo (`copy_to_clipboard.js` + `Ctrl+V` / `Cmd+V`) → SAVE
 5. Icono **Certification Parameters** → Level = **Default** → SAVE
 6. Cerrar el modal → **marcar el checkbox** de la fila
 7. Verificar que el contenido apareció
