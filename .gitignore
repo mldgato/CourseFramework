@@ -5,3 +5,8 @@ __pycache__/
 *.mp3
 .env
 _tools/_tmp_*.js
+_video_kit/entorno/
+Videos/**/out/
+Videos/**/snapshots/
+Videos/**/_fuente_*/edit/
+.ENV

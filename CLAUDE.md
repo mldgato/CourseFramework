@@ -58,7 +58,7 @@ Viven en `.claude/commands/` (Claude Code solo crea `/comandos` desde ahí). Cad
 - **Actividades:** emojis permitidos
 - **IDs de actividades:** `{config.id}-X.Y.Z`
 - **Compatibilidad:** funciona en Windows, Mac y Linux. Usa `python` (o `python3` si `python` no existe) y `node _tools/copy_to_clipboard.js` para el portapapeles
-- **Videos:** requieren `_video_kit/` (opcional, no viene en el repo); no producir a menos que el usuario lo pida explícitamente
+- **Videos:** el kit viene en `_video_kit/`; requieren `.env` con `ELEVENLABS_API_KEY` (copiar de `.env.example`). No producir a menos que el usuario lo pida explícitamente. Nunca imprimir ni pedir la clave en el chat
 - **El autor no toca ningún archivo en `_tools/`** ni escribe código
 
 ---
@@ -73,6 +73,7 @@ setup.js               ← instalador de dependencias
 _fuente-assets/        ← runtime de actividades (no tocar)
 _tools/                ← herramientas internas (no tocar)
 _video_kit/            ← kit de videos (no tocar)
+.env.example           ← plantilla de la clave de ElevenLabs
 Unidad N - Nombre/     ← carpetas del curso (las crea /init-course)
   Teoría/
   Preguntas/

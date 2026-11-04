@@ -5,10 +5,10 @@
 module.exports = {
 
   /* ── Llena estos campos manualmente ─────────────────────────── */
-  id:            "data-analytics",       // código corto sin espacios (se usa en IDs)
-  name:          "Data Analytics",       // nombre completo del curso
-  certification: "ITS: Data Analytics",  // certificación objetivo
-  courseName:    "Data Analytics",       // nombre corto para encabezados
+  id:            "networking",            // código corto sin espacios (se usa en IDs)
+  name:          "Networking",            // nombre completo del curso
+  certification: "ITS: Networking",      // certificación objetivo
+  courseName:    "Networking",            // nombre corto para encabezados
 
   palette: {
     navy:  "1F3864",
@@ -18,8 +18,8 @@ module.exports = {
   },
 
   platform: {
-    product:  "DataAnalytics",
-    courseId: "DA-FULL-01",
+    product:  "Networking",
+    courseId: "NET-FULL-01",
   },
 
   voices: {

@@ -33,7 +33,7 @@ Genera un archivo HTML autocontenido con la actividad interactiva del tema. Incl
 - Sin scroll de página; el contenido va dentro de `.step`
 - Badge `practica` (índigo) o `analogia` (ámbar) según el tipo
 - Los emojis sí se permiten en las actividades
-- ID de la actividad: `{config.id}-X.Y.Z` (ej. `data-analytics-1.1.1`)
+- ID de la actividad: `{config.id}-X.Y.Z` (ej. `<id>-1.1.1`)
 
 ### 3. Widgets disponibles
 ```js
